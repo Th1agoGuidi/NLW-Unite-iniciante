@@ -54,4 +54,15 @@ Nesse projeto iremos desenvolver a versão simplificada de um sistema de check-i
 
 - Manipular formulários, verificando se já existe uma informação igual a que está tentando ser inserida.
 
+<h4>Aprendizados da aula 3</h4>
+Por já ter feito o curso Discover e estudado mais a respeito, já tenho um bom entendimento do CSS. Contudo teve algumas técnicas que eu ainda não sabia e aprendi:
+
+<br>
+
+- Selecionar apenas uma camada dentro de um elemento (exemplo: fieldset > div seleciona apenas o primeiro nível de div)
+
+<h4>Mudanças pessoais no projeto</h4>
+
+Após todo o término do projeto, decidi inplementar o botão e sistema de Light / Dark mode que é ensinado no curso Discover da Rocketseat.
+
 
