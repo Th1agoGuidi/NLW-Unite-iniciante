@@ -37,7 +37,7 @@ Nesse projeto iremos desenvolver a versão simplificada de um sistema de check-i
 
 ## Aprendizado
 
-<h4>Na aula 1 aprendi a:</h4>
+<h4>Aprendizados da aula 1</h4>
 
 -  Criar e inserir listas com dados (no caso do projeto, dados dos participantes) no HTML pelo JavaScript de forma automatizada, sem a necessidade de criar um por um;
 
@@ -45,5 +45,12 @@ Nesse projeto iremos desenvolver a versão simplificada de um sistema de check-i
 
 - Como criar arrays e como manipular as informações dentro dela.
 
+<h4>Aprendizados da aula 2</h4>
+
+- Entendi como funciona o processo de lógica de programação, como devo pensar para criar algoritmos e instruir a linguagem;
+
+- Aprendi a verificar se um elemento é verdadeiro ou falso, e a partir do resultado meu código tomar rumos diferentes;
+
+- Manipular formulários, verificando se já existe uma informação igual a que está tentando ser inserida.
 
 
