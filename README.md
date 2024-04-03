@@ -30,12 +30,13 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - HTML
 - CSS
 - JavaScript
+- API <a href="https://day.js.org/">Day.js</a>
 
 ## Projeto
 
 Nesse projeto iremos desenvolver a versão simplificada de um sistema de check-in para eventos presenciais.
 
-## Aprendizado
+## Aprendizados
 
 <h4>Aprendizados da aula 1</h4>
 
