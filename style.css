@@ -217,7 +217,18 @@ button:hover {
     cursor: pointer;
 }
 
+/*  */
+@media (max-width: 425px ) {
+    .inputs {
+        display: grid;
+        justify-items: center;
+    }
 
+    .inputs .input-wrapper {
+        width: 100%;
+
+    }
+}
 /* animation */
 
 /* Light/Dark Mode Button*/
@@ -229,6 +240,8 @@ button:hover {
         left: 50%;
     }
 }
+
+
 
 /* Light/Dark Mode Button*/
 @keyframes slide-back {
