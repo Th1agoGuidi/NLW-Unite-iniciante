@@ -21,34 +21,55 @@
         <title>NLW Unite</title>
     </head>
     <body>
-        <!-- Formuário para enviar Nome e E-mail -->
-        <form onsubmit="adicionarParticipante(event)">
-            <fieldset>
-                <legend>Inscrição</legend>
-                <div>
-                    <input type="text" placeholder="Nome Completo" name="nome" required>
-                    <input type="email" placeholder="Insira seu e-mail" name="email" required>
-                    <button>Realizar Inscrição</button>
-                </div>
-            </fieldset>
-
-        </form>
-        <table>
+        <div class="container">
             <!-- Cabeçalho -->
-            <thead>
-                <tr>
-                    <th>Participante</th>
-                    <th>Data da Inscrição</th>
-                    <th>Data do Check-in</th>
-                </tr>
-            </thead>
-            
-            <!-- Lista de Participantes -->
-            <tbody>
-                
-            </tbody>
-        </table>
+            <header>
+                <img src="./assets/icon.svg" alt="Icone </> em laranja">
+            </header>
 
+            <!-- Formuário para enviar Nome e E-mail -->
+            <form onsubmit="adicionarParticipante(event)">
+                <fieldset>
+                    <legend>Inscrição</legend>
+                    <div>
+                        <div class="input-wrapper">
+                            <img src="./assets/name-icon.svg" alt="Icon de nome" class="svg1">
+                            <input type="text" placeholder="Nome Completo" name="nome" required>
+                        </div>
+                        <div class="input-wrapper">
+                            <img src="./assets/email-icon.svg" alt="Icon de email">
+                            <input type="email" placeholder="Insira seu e-mail" name="email" required>
+                        </div>
+
+                        <button>REALIZAR INSCRIÇÃO</button>
+                    </div>
+                </fieldset>
+
+            </form>
+            <section class="lista-participantes">
+                <h2>Participantes</h2>
+
+                <div>
+                    <table>
+                        <!-- Cabeçalho -->
+                        <thead>
+                            <tr>
+                                <th>Participante</th>
+                                <th>Data da Inscrição</th>
+                                <th>Data do Check-in</th>
+                            </tr>
+                        </thead>
+                        
+                        <!-- Lista de Participantes -->
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <!-- Lista de Participantes -->
+            
+        </div>
         <script src="./script.js"></script>
     </body>
 </html>
