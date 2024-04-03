@@ -16,7 +16,7 @@ let participantes = [
       nome: "Thiago Guidi",
       email: "thiago@gmail.com",
       dataInscricao: new Date(2024, 0, 3, 19, 23),
-      dataCheckIn: new Date(2024, 0, 4, 20, 20)
+      dataCheckIn: null
     },
     {
       nome: "João Silva",
@@ -28,7 +28,7 @@ let participantes = [
       nome: "Maria Oliveira",
       email: "maria@gmail.com",
       dataInscricao: new Date(2023, 10, 5, 19, 23),
-      dataCheckIn: new Date(2023, 10, 6, 20, 20)
+      dataCheckIn: null
     },
     {
       nome: "Pedro Santos",
@@ -52,7 +52,7 @@ let participantes = [
       nome: "Paula Costa",
       email: "paula@gmail.com",
       dataInscricao: new Date(2023, 6, 9, 19, 23),
-      dataCheckIn: new Date(2023, 6, 10, 20, 20)
+      dataCheckIn: null
     },
     {
       nome: "Gabriel Almeida",
@@ -69,7 +69,17 @@ const criarNovoParticipante = (participante) => {
     const dataInscricao = dayjs(Date.now()).to(participante.dataInscricao);
 
     //Data do checkin relativo a hoje
-    const dataCheckIn = dayjs(Date.now()).to(participante.dataCheckIn);
+    let dataCheckIn = dayjs(Date.now()).to(participante.dataCheckIn);
+
+    //Se a data do checkin == vazia 
+    if(participante.dataCheckIn == null) {
+      //Cria um botao que tem um dado de valor do email do participante
+      dataCheckIn = `
+        <button data-email="${participante.email}" onclick="fazerCheckIn(event)">
+          Confirmar Check-In
+        </button>
+      `
+    }
 
     //Retorna a lista de participantes para a sintaxe do HTML junto com a data que formatamos acima
     return `
@@ -98,9 +108,75 @@ const atualizarLista = (participantes) => {
 
     //Agora iremos adicionar dentro do HTML
 
-    //Dentro do HTML selecionaremos a tag <tbody> E dentro da tag <tbody> adicionaremos a nossa var output contendo a lista dos participantes
-    document.querySelector("tbody").innerHTML = output
+    //Dentro do HTML selecionaremos a tag <tbody>
+    document.querySelector("tbody")
+    // E dentro da tag <tbody> adicionaremos a nossa var output contendo a lista dos participantes
+    .innerHTML = output
 }
 
 //A lista não irá se atualizar/criar sozinha, então temos que chamar ela
 atualizarLista(participantes);
+
+//Adicionar participante ao clicar no botão
+const adicionarParticipante = (event) => {
+  //Previne de enviar o formulario
+  event.preventDefault()
+
+  //Adiciona os dados do formulario na variavel
+  const dadosDoFormulario = new FormData(event.target)
+
+  //Cria uma variavel com as infos que o participante digitar, criando uma nova data e checkin vazio
+  const participante = {
+    nome: dadosDoFormulario.get('nome'),
+    email: dadosDoFormulario.get('email'),
+    dataInscricao: new Date(),
+    dataCheckIn: null
+  }
+
+  //Verificar se o participante já existe
+  const participanteExiste = participantes.find(
+    //Se o email ja existir, a variavel irá retornar true
+    (p) => p.email == participante.email
+  )
+
+  //Se a variavel for true, encerra o cadastro
+  if(participanteExiste) {
+    alert("Email já cadastrado!")
+    return
+  }
+  //Adiciona a var acima com as novas infos no "armario" com os participantes, e adiciona/mantem
+  //os participantes já existentes com o elemento ...participantes
+  participantes = [participante, ...participantes]
+
+  //Atualiza a lista, passando os novos participantes para a var dos participantes
+  atualizarLista(participantes);
+
+  //Limpar o formulário
+  //Seleciona os inputs e deixa vazio os valores dele após adicionar o participante
+  event.target.querySelector('[name="nome"]').value = ""
+  event.target.querySelector('[name="email"]').value = ""
+}
+
+//Fazer checkin clicando no botão
+const fazerCheckIn = (event) => {
+  //Confirmar o checkin
+  const resultado = confirm("Tem certeza que quer fazer o Check-in?")
+  //Se a pessoa clicar em não (que retorna false)
+  if(resultado == false){
+    //Interrompe o funcionamento e ignora as linhas abaixo
+    return
+  }
+
+  //Encontrar o participante dentro da lista
+  const participante = participantes.find((p) => {
+    //Encontra o email armazenado na data-set do botao de checkin
+    //e verifica se é igual ao email do participante
+    return p.email == event.target.dataset.email
+  });
+  //Atualizar o checkin do participante com a data do momento do clique
+  participante.dataCheckIn = new Date();
+  //Atualizar a lista de participantes
+  atualizarLista(participantes);
+}
+
+

@@ -1,7 +1,60 @@
+body, table, input, button {
+    font: 300 16px/200% "Roboto", sans-serif;
+}
+
+body {
+    background-color: #121214;
+    color: #ffffff;
+}
+
 table {
     width: 100%;
+    border-collapse: collapse;
 }
 
 thead {
     text-align: left;
 }
+
+table thead{
+    font-size: 14px;
+    line-height: 16px;
+}
+
+thead th,
+tbody td {
+    padding: 12px 16px;
+}
+
+tbody td {
+    border-top: 1px solid #ffffff20;
+    font-size: 13px;
+    line-height: 15px;
+    color: #c4c4cc;
+}
+
+tbody td strong {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 600;
+}
+
+tbody td small {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+tbody td button {
+    all: unset;
+    color: #9ff9cc;
+}
+
+tbody td button:hover {
+    text-decoration: underline;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
