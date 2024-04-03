@@ -52,7 +52,8 @@ body {
 
 header {
     display: flex;
-    align-items: center;    
+    align-items: center;
+    justify-content: space-between;
     padding: 20px 0;
 }
 
@@ -60,8 +61,6 @@ header {
 
 #switch {
     position:relative;
-    left: 30%;
-    margin: 4px auto;
 }
 
 #switch button {
