@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-    <html lang="pt-br">
+    <html lang="pt-br" class="">
     <head>
 
         <!-- Fontes  -->
@@ -24,7 +24,12 @@
         <div class="container">
             <!-- Cabeçalho -->
             <header>
-                <img src="./assets/icon.svg" alt="Icone </> em laranja">
+                <img src="./assets/icon.svg" alt="Icone em laranja">
+                <!-- Botao light/darkmode -->
+                <div id="switch" onclick="toggleMode()">
+                    <button></button>
+                    <span></span>
+                </div>
             </header>
 
             <!-- Formuário para enviar Nome e E-mail -->
@@ -37,7 +42,7 @@
                             <input type="text" placeholder="Nome Completo" name="nome" required>
                         </div>
                         <div class="input-wrapper">
-                            <img src="./assets/email-icon.svg" alt="Icon de email">
+                            <img src="./assets/email-icon.svg" alt="Icon de email" class="svg2">
                             <input type="email" placeholder="Insira seu e-mail" name="email" required>
                         </div>
 

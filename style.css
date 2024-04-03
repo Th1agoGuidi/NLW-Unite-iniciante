@@ -5,7 +5,32 @@
 }
 
 :root {
+    --bg-color: #121214;
+    --text-color: #ffffff;
+    --sub-text-color: #c4c4cc;
+
     --border: 1px solid #ffffff1a;
+    --switch-bg-url: url(./assets/MoonStars.svg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(0, 0, 0, 0.05);
+    --social-link-hover: rgba(255, 255, 255, 0.2);
+    --confirm-btn: #9ff9cc;
+}
+
+/* Light Mode Variaveis */
+.light {
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.01);
+    --switch-bg-url: url(./assets/Sun.svg);
+
+    --border: 1px solid #000000;
+    --bg-color: #F1EADD;
+    --text-color: #121214;
+    --sub-text-color: #161616;
+    --confirm-btn: #db7236;
+
 }
 
 
@@ -15,8 +40,8 @@ body, table, input, button {
 }
 
 body {
-    background-color: #121214;
-    color: #ffffff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .container {
@@ -26,7 +51,52 @@ body {
 }
 
 header {
+    display: flex;
+    align-items: center;    
     padding: 20px 0;
+}
+
+/* Light / Dark Mode */
+
+#switch {
+    position:relative;
+    left: 30%;
+    margin: 4px auto;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    right: 1;
+    z-index: 1;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 0;
+    animation: slide-back 0.4s;
+    cursor: pointer;
+}
+
+#switch button:hover {
+    outline: 8px solid var(--social-link-hover);
+}
+
+.light #switch button {
+    animation: slide-in 0.4s forwards;
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    border-radius: 9999px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 form {
@@ -58,7 +128,7 @@ fieldset > div {
     padding: 8px 12px;
 
     font: 400 14px/150% "Roboto", sans-serif;
-    color: #c4c4cc;
+    color: var(--sub-text-color);
 }
 
 input {
@@ -67,7 +137,7 @@ input {
 
 fieldset legend, section h2 {
     font: 700 16px/140% "Roboto", sans-serif;
-    color: #e1e1e6;
+    color: var(--text-color);
     padding-bottom: 16px;
 }
 
@@ -120,11 +190,11 @@ tbody td {
     border-top: var(--border);
     font-size: 13px;
     line-height: 15px;
-    color: #c4c4cc;
+    color: var(--sub-text-color);
 }
 
 tbody td strong {
-    color: #ffffff;
+    color: var(--text-color);
     font-size: 14px;
     line-height: 16px;
     font-weight: 600;
@@ -137,7 +207,7 @@ tbody td small {
 
 tbody td button {
     all: unset;
-    color: #9ff9cc;
+    color: var(--confirm-btn);
 }
 
 tbody td button:hover {
@@ -148,3 +218,25 @@ button:hover {
     cursor: pointer;
 }
 
+
+/* animation */
+
+/* Light/Dark Mode Button*/
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+/* Light/Dark Mode Button*/
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
+    }
+}

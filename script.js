@@ -180,3 +180,23 @@ const fazerCheckIn = (event) => {
 }
 
 
+function toggleMode() {
+
+  const html = document.documentElement
+
+  html.classList.toggle("light");
+
+  //Mudar icones no light mode
+
+  const img1 = document.querySelector(".svg1");
+  const img2 = document.querySelector(".svg2");
+
+  if (html.classList.contains("light")) {
+    img1.setAttribute('src', './assets/name-icon-light.svg');
+    img2.setAttribute('src', './assets/email-icon-light.svg');
+  } else {
+    img1.setAttribute('src', './assets/name-icon.svg');
+    img2.setAttribute('src', './assets/email-icon.svg');
+  }
+  
+}
