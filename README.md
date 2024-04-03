@@ -59,10 +59,12 @@ Por já ter feito o curso Discover e estudado mais a respeito, já tenho um bom 
 
 <br>
 
-- Selecionar apenas uma camada dentro de um elemento (exemplo: fieldset > div seleciona apenas o primeiro nível de div)
+- Selecionar apenas uma camada dentro de um elemento (exemplo: fieldset > div seleciona apenas o primeiro nível de div).
 
 ## Mudanças pessoais no projeto
 
-Após todo o término do projeto, decidi inplementar o botão e sistema de Light / Dark mode que é ensinado no curso Discover da Rocketseat e alterei algumas cores para melhor visualização.
+- Botão Light / Dark;
+
+- Responsividades pra dispositivos mobile.
 
 
