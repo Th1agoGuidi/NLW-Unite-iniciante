@@ -218,7 +218,7 @@ button:hover {
 }
 
 /*  */
-@media (max-width: 425px ) {
+@media (max-width:620px ) {
     .inputs {
         display: grid;
         justify-items: center;
@@ -226,7 +226,6 @@ button:hover {
 
     .inputs .input-wrapper {
         width: 100%;
-
     }
 }
 /* animation */

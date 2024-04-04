@@ -19,7 +19,7 @@ Aplicação desenvolvida no NLW Unite da Rocketseat na trilha HTML+CSS+JS.
 <br>
 
 <p align="center">
-  <img alt="Preview do projeto desenvolvido." src=".github/preview.png" width="60%">
+  <img alt="Preview do projeto desenvolvido." src=".github/preview.png" width="50%">
 </p>
 
 
@@ -66,5 +66,3 @@ Por já ter feito o curso Discover e estudado mais a respeito, já tenho um bom 
 - Botão Light / Dark;
 
 - Responsividades pra dispositivos mobile.
-
-

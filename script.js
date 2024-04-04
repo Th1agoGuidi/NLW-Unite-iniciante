@@ -97,26 +97,25 @@ const criarNovoParticipante = (participante) => {
 
 //Inserir / Substituir no HTML a const que criamos acima
 const atualizarLista = (participantes) => {
-    //Criamos uma var vazia pra receber a lista
-    let output = "";
-
-    //para cada participante de participantes
-    for (let participante of participantes) {
-        //Pega o output + seu valor e adiciona um novo participante
-        output = output + criarNovoParticipante(participante)
-    }
-
-    //Agora iremos adicionar dentro do HTML
-
-    //Dentro do HTML selecionaremos a tag <tbody>
-    document.querySelector("tbody")
-    // E dentro da tag <tbody> adicionaremos a nossa var output contendo a lista dos participantes
-    .innerHTML = output
+  //Criamos uma var vazia pra receber a lista
+  let output = "";
+  
+  //para cada participante de participantes
+  for (let participante of participantes) {
+    //Pega o output + seu valor e adiciona um novo participante
+    output = output + criarNovoParticipante(participante)
+  }
+  
+  //Agora iremos adicionar dentro do HTML
+  
+  //Dentro do HTML selecionaremos a tag <tbody>
+  document
+  .querySelector("tbody")
+  .innerHTML = output
 }
 
-//A lista não irá se atualizar/criar sozinha, então temos que chamar ela
 atualizarLista(participantes);
-
+//A lista não irá se atualizar/criar sozinha, então temos que chamar ela
 //Adicionar participante ao clicar no botão
 const adicionarParticipante = (event) => {
   //Previne de enviar o formulario
